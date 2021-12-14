@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "iterator": "cpp",
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "ranges": "cpp",
+        "vector": "cpp"
+    }
+}

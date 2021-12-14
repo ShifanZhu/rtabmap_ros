@@ -998,7 +998,7 @@ void CommonDataSubscriber::warningLoop()
 		r.sleep();
 		if(!callbackCalled_)
 		{
-			ROS_WARN("%s: Did not receive data since 5 seconds! Make sure the input topics are "
+			ROS_WARN("%s: Di d not receive data since 5 seconds! Make sure the input topics are "
 					"published (\"$ rostopic hz my_topic\") and the timestamps in their "
 					"header are set. If topics are coming from different computers, make sure "
 					"the clocks of the computers are synchronized (\"ntpdate\"). %s%s",
