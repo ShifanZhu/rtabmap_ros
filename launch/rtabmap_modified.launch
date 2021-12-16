@@ -468,4 +468,6 @@
     <param name="approx_sync" type="bool"   value="$(arg approx_sync)"/>
   </node>
 
+  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 /camera_link /velodyne 100" />
+
 </launch>

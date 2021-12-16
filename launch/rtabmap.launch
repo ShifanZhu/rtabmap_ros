@@ -371,8 +371,8 @@
 	<param name="RGBD/AngularUpdate"        type="string" value="0.01"/>
 	<param name="RGBD/LinearUpdate"         type="string" value="0.01"/>
 	<param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
-	<param name="Grid/FromDepth"            type="string" value="true"/> 
-    <param name="Grid/3D"					        type="string" value="true"/>
+	<param name="Grid/FromDepth"            type="string" value="false"/> 
+    <param name="Grid/3D"					        type="string" value="false"/>
 	<param name="Grid/MaxObstacleHeight"            type="double" value="0.05"/> 
 	<param name="Grid/MaxGroundHeight"            type="double" value="0.0"/> 
     <param name="Grid/CellSize"				type="double" value="0.05" />
@@ -402,7 +402,6 @@
       <remap from="fiducial_transforms"    to="$(arg fiducial_topic)"/>
       <remap from="odom"                   to="$(arg odom_topic)"/>
       <remap from="imu"                    to="$(arg imu_topic)"/>
-	<remap from="/map"						to="/rtabmap/octomap_grid"/>
       
       <!-- localization mode -->
       <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
