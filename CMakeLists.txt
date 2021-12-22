@@ -22,6 +22,8 @@ find_package(catkin REQUIRED COMPONENTS
              genmsg stereo_msgs move_base_msgs image_geometry pluginlib
 )
 
+# list( APPEND CMAKE_MODULE_PATH /home/zh/code/rtabmap_ws/src/rtabmap_ros/cmake_modules)
+
 # Optional components
 find_package(costmap_2d)
 find_package(octomap_msgs)
@@ -29,6 +31,7 @@ find_package(apriltag_ros)
 find_package(rviz)
 find_package(find_object_2d)
 find_package(fiducial_msgs)
+#find_package(ORB_SLAM) 
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -332,11 +335,17 @@ target_link_libraries(rtabmap_plugins
 add_dependencies(rtabmap_ros ${${PROJECT_NAME}_EXPORTED_TARGETS})
 add_dependencies(rtabmap_plugins ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
+add_executable(pub_pose src/PubPose.cpp)
+target_link_libraries(pub_pose ${Libraries} lcm)
+
+add_executable(sub_pose src/SubPoseLcm.cpp)
+target_link_libraries(sub_pose ${Libraries} lcm)
+
 add_executable(rtabmap src/CoreNode.cpp)
 target_link_libraries(rtabmap ${Libraries})
 
 add_executable(rtabmap_rgbd_odometry src/RGBDOdometryNode.cpp)
-target_link_libraries(rtabmap_rgbd_odometry ${Libraries})
+target_link_libraries(rtabmap_rgbd_odometry ${Libraries} /home/zh/code/ORB_SLAM3/lib/libORB_SLAM3.so)
 set_target_properties(rtabmap_rgbd_odometry PROPERTIES OUTPUT_NAME "rgbd_odometry")
 
 add_executable(rtabmap_stereo_odometry src/StereoOdometryNode.cpp)

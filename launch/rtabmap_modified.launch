@@ -156,6 +156,8 @@
   <arg if="$(arg rgbd_sync)"      name="rgbd_topic_relay"          default="$(arg rgbd_topic)"/>
   <arg unless="$(arg rgbd_sync)"  name="rgbd_topic_relay"          default="$(arg rgbd_topic)_relay"/>
 
+  <arg name="orb3_voc_path"           default="/home/zh/data/orb_voc/ORBvoc.bin"/>
+
   <!-- Nodes -->
   <group ns="$(arg namespace)">
      
@@ -233,6 +235,10 @@
           <remap from="rgbd_image"      to="$(arg rgbd_topic_relay)"/>
           <remap from="odom"            to="$(arg odom_topic)"/>
           <remap from="imu"             to="$(arg imu_topic)"/>
+
+          <param name="Odom/Strategy" value="0"/>
+          <param name="OdomORBSLAM/MaxFeatures"   value="1500"/> <!-- default = 1000 -->
+          <param name="OdomORBSLAM/VocPath"   type="string" value="$(arg orb3_voc_path)"/>
       
           <param name="frame_id"                    type="string" value="$(arg frame_id)"/>
           <param name="odom_frame_id"               type="string" value="$(arg vo_frame_id)"/>
@@ -468,6 +474,8 @@
     <param name="approx_sync" type="bool"   value="$(arg approx_sync)"/>
   </node>
 
-  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster" args="0 0 0 0 0 0 /camera_link /velodyne 100" />
+  <node pkg="rtabmap_ros" type="pub_pose" name="pub_pose" output="screen"/>
+
+  <node pkg="rtabmap_ros" type="sub_pose" name="sub_pose" output="screen"/>
 
 </launch>
