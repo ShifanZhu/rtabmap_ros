@@ -1,21 +1,30 @@
 # Installation for mini-Cheetah
 ## Install ROS
 Follow this [instruction](http://wiki.ros.org/Installation/Ubuntu) to install ROS.
-## Install rtabmap from sourse
-    ```bash
-    $ cd ~
-    $ git clone https://github.com/ShifanZhu/rtabmap rtabmap
-    $ cd rtabmap/build
-    $ cmake ..  [<---double dots included]
-    $ make -j6
-    $ sudo make install
-    ```
+## Install rtabmap from sourse **Do not clone in your Catkin workspace**
+```bash
+$ cd ~
+$ git clone https://github.com/ShifanZhu/rtabmap rtabmap
+$ cd rtabmap/build
+$ cmake ..  [<---double dots included]
+$ make -j6
+$ sudo make install
+```
 ## Install rtabmap_ros
-    ```bash
-    $ cd ~/catkin_ws
-    $ git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
-    $ catkin_make -j4
+```bash
+$ cd ~/rtabmap_ws
+$ git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
+$ catkin_make -j4
     ```
+## How to run
+1. cd ~/rtabmap_ws
+2. source devel/setup.bash
+3. roslaunch rtabmap_ros rtabmap_modified.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/aligned_depth_to_color/image_raw rgb_topic:=/camera/color/image_raw camera_info_topic:=/camera/color/camera_info approx_sync:=false use_sim_time:=true
+
+Open rosbag in another terminal
+cd PATH_TO_YOUR_BAG
+rosbag play --clock YOUR_BAG
+
     
 =======
 
