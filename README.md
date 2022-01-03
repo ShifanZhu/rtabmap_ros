@@ -16,11 +16,23 @@ $ cd ~/rtabmap_ws
 $ git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
 $ catkin_make -j4
 ```
-## How to run
+## How to run (SLAM mode)
 ```bash
 $ cd ~/rtabmap_ws
 $ source devel/setup.bash
 $ roslaunch rtabmap_ros rtabmap_modified.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/aligned_depth_to_color/image_raw rgb_topic:=/camera/color/image_raw camera_info_topic:=/camera/color/camera_info approx_sync:=false use_sim_time:=true
+```
+Open rosbag in another terminal
+```bash
+$ cd PATH_TO_YOUR_BAG
+rosbag play --clock YOUR_BAG
+```
+
+## How to run (Localization mode)
+```bash
+$ cd ~/rtabmap_ws
+$ source devel/setup.bash
+$ roslaunch roslaunch rtabmap_ros rtabmap_modified.launch depth_topic:=/camera/aligned_depth_to_color/image_raw rgb_topic:=/camera/color/image_raw camera_info_topic:=/camera/color/camera_info approx_sync:=false use_sim_time:=true localization:=true
 ```
 Open rosbag in another terminal
 ```bash
