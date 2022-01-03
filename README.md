@@ -41,7 +41,8 @@ rosbag play --clock YOUR_BAG
 ```
 
     
-=========================================
+==================== End of Instruction for mini-Cheetah =======================
+==================== Below is the original instruction =========================
 
 rtabmap_ros [![Build Status](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml) [![docker](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml)
 =======
