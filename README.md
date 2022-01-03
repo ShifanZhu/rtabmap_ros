@@ -17,16 +17,19 @@ $ git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
 $ catkin_make -j4
 ```
 ## How to run
-1. cd ~/rtabmap_ws
-2. source devel/setup.bash
-3. roslaunch rtabmap_ros rtabmap_modified.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/aligned_depth_to_color/image_raw rgb_topic:=/camera/color/image_raw camera_info_topic:=/camera/color/camera_info approx_sync:=false use_sim_time:=true
-
+```bash
+$ cd ~/rtabmap_ws
+$ source devel/setup.bash
+$ roslaunch rtabmap_ros rtabmap_modified.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/aligned_depth_to_color/image_raw rgb_topic:=/camera/color/image_raw camera_info_topic:=/camera/color/camera_info approx_sync:=false use_sim_time:=true
+```
 Open rosbag in another terminal
-cd PATH_TO_YOUR_BAG
+```bash
+$ cd PATH_TO_YOUR_BAG
 rosbag play --clock YOUR_BAG
+```
 
     
-=======
+=========================================
 
 rtabmap_ros [![Build Status](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml) [![docker](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml)
 =======
