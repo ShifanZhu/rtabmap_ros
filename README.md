@@ -1,3 +1,24 @@
+# Installation for mini-Cheetah
+## Install ROS
+Follow this [instruction](http://wiki.ros.org/Installation/Ubuntu) to install ROS.
+## Install rtabmap from sourse
+    ```bash
+    $ cd ~
+    $ git clone https://github.com/ShifanZhu/rtabmap rtabmap
+    $ cd rtabmap/build
+    $ cmake ..  [<---double dots included]
+    $ make -j6
+    $ sudo make install
+    ```
+## Install rtabmap_ros
+    ```bash
+    $ cd ~/catkin_ws
+    $ git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
+    $ catkin_make -j4
+    ```
+    
+=======
+
 rtabmap_ros [![Build Status](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml) [![docker](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml)
 =======
 
