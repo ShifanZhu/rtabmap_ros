@@ -40,9 +40,9 @@ find_package(RTABMap 0.20.15 REQUIRED)
 find_package(OpenCV REQUIRED)
 
 IF(RTABMAP_GUI)
-FIND_PACKAGE(PCL 1.7 REQUIRED QUIET COMPONENTS common io kdtree search surface filters registration sample_consensus segmentation visualization)
+FIND_PACKAGE(PCL 1.8 REQUIRED QUIET COMPONENTS common io kdtree search surface filters registration sample_consensus segmentation visualization)
 ELSE()
-FIND_PACKAGE(PCL 1.7 REQUIRED QUIET COMPONENTS common io kdtree search surface filters registration sample_consensus segmentation )
+FIND_PACKAGE(PCL 1.8 REQUIRED QUIET COMPONENTS common io kdtree search surface filters registration sample_consensus segmentation )
 ENDIF()
 add_definitions(${PCL_DEFINITIONS}) # To include -march=native if set
 
@@ -346,9 +346,10 @@ target_link_libraries(rtabmap ${Libraries})
 
 add_executable(rtabmap_rgbd_odometry src/RGBDOdometryNode.cpp)
 # target_link_libraries(rtabmap_rgbd_odometry ${Libraries} /home/zh/code/ORB_SLAM3/lib/libORB_SLAM3.so)
-target_link_libraries(rtabmap_rgbd_odometry ${Libraries})
+target_link_libraries(rtabmap_rgbd_odometry ${Libraries} /home/zh/code/rtabmap_ws/devel/lib/librtabmap_plugins.so)
 set_target_properties(rtabmap_rgbd_odometry PROPERTIES OUTPUT_NAME "rgbd_odometry")
 
+# message(${Libraries}, "testtest")
 add_executable(rtabmap_stereo_odometry src/StereoOdometryNode.cpp)
 target_link_libraries(rtabmap_stereo_odometry ${Libraries})
 set_target_properties(rtabmap_stereo_odometry PROPERTIES OUTPUT_NAME "stereo_odometry")
