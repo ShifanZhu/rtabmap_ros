@@ -379,8 +379,8 @@
 	<param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
 	<param name="Grid/FromDepth"            type="string" value="true"/> 
     <param name="Grid/3D"					        type="string" value="true"/>
-	<param name="Grid/MaxObstacleHeight"            type="double" value="0.05"/> 
-	<param name="Grid/MaxGroundHeight"            type="double" value="0.0"/> 
+	<param name="Grid/MaxObstacleHeight"            type="double" value="-0.05"/> 
+	<param name="Grid/MaxGroundHeight"            type="double" value="-0.0"/> 
     <param name="Grid/CellSize"				type="double" value="0.05" />
 	<param name="Reg/Force3DoF"             type="string" value="false"/>
 

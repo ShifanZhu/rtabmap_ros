@@ -345,7 +345,8 @@ add_executable(rtabmap src/CoreNode.cpp)
 target_link_libraries(rtabmap ${Libraries})
 
 add_executable(rtabmap_rgbd_odometry src/RGBDOdometryNode.cpp)
-target_link_libraries(rtabmap_rgbd_odometry ${Libraries} /home/zh/code/ORB_SLAM3/lib/libORB_SLAM3.so)
+# target_link_libraries(rtabmap_rgbd_odometry ${Libraries} /home/zh/code/ORB_SLAM3/lib/libORB_SLAM3.so)
+target_link_libraries(rtabmap_rgbd_odometry ${Libraries})
 set_target_properties(rtabmap_rgbd_odometry PROPERTIES OUTPUT_NAME "rgbd_odometry")
 
 add_executable(rtabmap_stereo_odometry src/StereoOdometryNode.cpp)
