@@ -13,7 +13,7 @@ $ sudo make install
 ## Install rtabmap_ros
 ```bash
 $ cd ~/rtabmap_ws
-$ git clone https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
+$ git clone https://github.com/ShifanZhu/rtabmap_ros.git src/rtabmap_ros
 $ catkin_make -j4
 ```
 ## How to run (SLAM mode)
