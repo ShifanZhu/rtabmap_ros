@@ -32,7 +32,7 @@ rosbag play --clock YOUR_BAG
 ```bash
 $ cd ~/rtabmap_ws
 $ source devel/setup.bash
-$ roslaunch roslaunch rtabmap_ros rtabmap_modified.launch depth_topic:=/camera/aligned_depth_to_color/image_raw rgb_topic:=/camera/color/image_raw camera_info_topic:=/camera/color/camera_info approx_sync:=false use_sim_time:=true localization:=true
+$ roslaunch rtabmap_ros rtabmap_modified.launch depth_topic:=/camera/aligned_depth_to_color/image_raw rgb_topic:=/camera/color/image_raw camera_info_topic:=/camera/color/camera_info approx_sync:=false use_sim_time:=true localization:=true
 ```
 Open rosbag in another terminal
 ```bash
